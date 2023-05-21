@@ -12,6 +12,7 @@ void rostring(char *str)
 	int flag = 0;
 	while(str[i])
 	{
+		flag = 0;
 		while(str[i] == 32 && str[i])
 			i++;
 		while(str[i] != 32 && str[i])
@@ -20,8 +21,7 @@ void rostring(char *str)
 			write(1,&str[i++],1);
 		}
 		if(flag)
-			write(1,"-",1);
-		flag = 0;
+			write(1," ",1);
 	}
 	while(s <= e)
 		write(1,&str[s++],1);
