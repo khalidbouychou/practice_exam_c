@@ -23,16 +23,17 @@ _____________
 #include <stdio.h>
 unsigned char reverse_bits(unsigned char octect)
 {
-   int i = 8;
+   int i = 0;
    unsigned char res;
-   while(i--)
+   while(i < 8)
    {
      res = res * 2 + (octect % 2);
      octect /= 2;
+     i++;
    }
    return res;
 }
 int main()
 {
-    printf("%d\n",reverse_bits(10));
+    printf("%d\n",reverse_bits(2));
 }
